@@ -25,7 +25,8 @@ Grunt plugin for Preceptor
 * [Getting Started](#getting-started)
 * [The "preceptor" Task](#the-preceptor-task)
     * [Overview](#overview)
-    * [Usage Example](#usage-example)
+    * [Options](#options)
+    * [Usage Examples](#usage-examples)
 * [Third-party libraries](#third-party-libraries)
 * [License](#license)
 
@@ -74,7 +75,44 @@ grunt.initConfig({
 })
 ```
 
-### Usage Example
+
+### Options
+
+#### options.ruleBook
+Type: `Object` **required**
+
+Options that would be otherwise in a ```rule-book.js``` or ```rule-book.json```. 
+You can also require the js or json file instead of adding here all the options.
+
+#### options.profile
+Type: `String` --optional--
+
+Selects a profile in the root of the ```ruleBook``` option.
+
+#### options.subProfile
+Type: `String` --optional--
+
+Selects a sub-profile in the root of the ```tasks``` object of the ```ruleBook``` option.
+
+### Usage Examples
+
+#### Default Options
+
+You can supply the rule-book file in the options object of a task:
+
+```javascript
+grunt.initConfig({
+  preceptor: {
+  	ci: {
+		options: {
+			ruleBook: require('./rule-book.js')
+		}
+	}
+  }
+})
+```
+
+#### Inline Options 
 
 You can supply the rule-book file in the options object of a task - in the following case for the ```preceptor:ci``` task:
 
@@ -83,7 +121,59 @@ grunt.initConfig({
   preceptor: {
   	ci: {
 		options: {
-			ruleBook: 'rule-book.js'
+			ruleBook: {
+				"configuration": {
+					"reportManager": {
+						"reporter": [
+							{"type": "Spec"},
+							{"type": "List", "progress": false}
+						]
+					}
+				},
+
+				"tasks": [
+					...
+				]
+			}
+		}
+	}
+  }
+})
+```
+
+#### Profile and Sub-Profile Options
+
+For multiple configurations, you can supply the profile or sub-profile options:
+
+```javascript
+grunt.initConfig({
+
+  preceptor: {
+  
+  	ciSmoke: {
+		options: {
+		
+			ruleBook: {
+			
+				"ci": { // "ci" profile (see example)
+				
+					"configuration": {
+						"reportManager": {
+							"reporter": [
+								{"type": "Spec"},
+								{"type": "List", "progress": false}
+							]
+						}
+					},
+	
+					"tasks": {
+					
+						"smoke": [ // "smoke"-test sub-profile (see example)
+							...
+						]
+					}
+				}
+			}
 		}
 	}
   }
