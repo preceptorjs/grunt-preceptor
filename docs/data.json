@@ -1,0 +1,69 @@
+{
+    "project": {
+        "name": "grunt-preceptor",
+        "description": "Grunt plugin for Preceptor",
+        "version": "0.9.0"
+    },
+    "files": {
+        "lib/profiles.js": {
+            "name": "lib/profiles.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {},
+    "classitems": [
+        {
+            "file": "lib/profiles.js",
+            "line": 1,
+            "description": "Loads a profile from rulebook options",
+            "itemtype": "method",
+            "name": "loadProfile",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of profile",
+                    "type": "String|undefined"
+                },
+                {
+                    "name": "ruleBook",
+                    "description": "Rulebook options",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "Rulebook options filtered by profile",
+                "type": "Object"
+            },
+            "class": ""
+        },
+        {
+            "file": "lib/profiles.js",
+            "line": 25,
+            "description": "Loads a sub-profile from rulebook options",
+            "itemtype": "method",
+            "name": "loadSubProfile",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of sub-profile",
+                    "type": "String|undefined"
+                },
+                {
+                    "name": "ruleBook",
+                    "description": "Rulebook options",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "Rulebook options filtered by sub-profile",
+                "type": "Object"
+            },
+            "class": ""
+        }
+    ],
+    "warnings": []
+}
