@@ -15,7 +15,6 @@ Grunt plugin for Preceptor
 [![NPM](https://nodei.co/npm-dl/grunt-preceptor.png?months=3&height=2)](https://www.npmjs.com/package/grunt-preceptor)
 
 [![Coverage Report](https://img.shields.io/badge/Coverage_Report-Available-blue.svg)](http://preceptorjs.github.io/grunt-preceptor/coverage/lcov-report/)
-[![API Documentation](https://img.shields.io/badge/API_Documentation-Available-blue.svg)](http://preceptorjs.github.io/grunt-preceptor/docs/)
 
 [![Gitter Support](https://img.shields.io/badge/Support-Gitter_IM-yellow.svg)](https://gitter.im/preceptorjs/support)
 
